@@ -1,1 +1,38 @@
-<p>product works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{title}} </title>
+</head>
+<body>
+
+    <div class="container-prod">
+        <table class="table-prod">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Descripcion</th>
+              <th>Image</th>
+              <th>Categoria</th>
+            </tr>
+          </thead>
+    
+          <tbody>
+            @for (prod of products; track $index) {
+              <tr>
+                <td> {{$index + 1}} </td>
+                <td> {{prod.title}} </td>
+                <td> {{prod.price}} </td>
+                <td> {{prod.description}} </td>
+                <img [src]="prod.image" alt="Product Image" class="image-prod">
+                <td> {{prod.category}} </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>    
+</body>
+</html>
