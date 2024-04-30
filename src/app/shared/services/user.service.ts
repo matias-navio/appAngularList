@@ -10,8 +10,7 @@ export class UserService {
   listaUsers: any[] = [];
   private readonly _http = inject(HttpClient);
   
-  getProducts(): Observable<any[]>{
-
-    return this._http.get<any[]>('https://fakestoreapi.com/products');
+  getUsers(): Observable<any[]>{
+    return this._http.get<any[]>('https://fakestoreapi.com/users');
   }
 }

@@ -7,35 +7,22 @@
   <title>Document</title>
 </head>
 <body>
-  
-  <div class="container-prod">
-    <table class="table-prod">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Descripcion</th>
-          <th>Categoria</th>
-          <th>Image</th>
-        </tr>
-      </thead>
 
-      <tbody>
-        @for (prod of products; track $index) {
-          <tr>
-            <td> {{$index + 1}} </td>
-            <td> {{prod.title}} </td>
-            <td> {{prod.price}} </td>
-            <td> {{prod.description}} </td>
-            <td> {{prod.category}} </td>
-            <!-- <img [src]="prod.image" alt="Product Image" class="image-prod"> -->
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>    
-  
+  <section class="container-prod">
+    <div class="grid-container">
+      @for (prod of products; track $index) {
+        <div class="grid-item">
+          <img [src]="prod.image" alt="Product Image" class="image-prod">
+          <div class="datos-prod">
+            <h4 class="title-prod">{{ prod.title }}</h4>
+            <p class="price">$ {{ prod.price }}</p>
+            <p>Category: {{ prod.category }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
 </body>
 </html>
     
